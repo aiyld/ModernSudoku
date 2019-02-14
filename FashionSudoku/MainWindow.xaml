@@ -1,0 +1,25 @@
+﻿<Window x:Class="FashionSudoku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fashion Sudoku" Height="450" Width="306" MinWidth="100" MinHeight="200"
+        xmlns:sudoku="clr-namespace:ModernSudoku;assembly=ModernSudoku"
+        Style="{StaticResource WindowStyle}" BorderThickness="1"
+        BorderBrush="Gray" WindowStartupLocation="CenterScreen"
+        x:Name="window" Icon="sudoku.ico">
+    <Grid x:Name="grid">
+        <sudoku:MainWindow Style="{StaticResource NoneControlStyle}"
+            Height="{Binding ActualHeight, ElementName=grid}"
+            Width="{Binding ActualWidth, ElementName=grid}"
+            BorderThickness="0"
+            Margin="-6"
+            BorderBrush="Transparent">
+            <sudoku:MainWindow.Template>
+                <ControlTemplate TargetType="UserControl">
+                    <Grid>
+                         <ContentPresenter Grid.Row="1"/>
+                    </Grid>
+                </ControlTemplate>
+            </sudoku:MainWindow.Template>
+        </sudoku:MainWindow>
+    </Grid>
+</Window>

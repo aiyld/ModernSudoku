@@ -1,0 +1,51 @@
+﻿<common:LayoutControl x:Class="ModernSudoku.Views.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:CommonControls.Common;assembly=CommonControls"
+             Title="About" d:DesignHeight="300" d:DesignWidth="300"
+             mc:Ignorable="d"
+             xmlns:panels="clr-namespace:CommonControls.Windows.Panels;assembly=CommonControls">
+    <common:LayoutControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </common:LayoutControl.Resources>
+    
+    <Grid>
+        <panels:BoxPanel ButtonCommand="{Binding BackCommand}" FrameBorderBrush="Silver">
+            <panels:BoxPanel.Child>
+                <StackPanel Margin="10" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                        <Image Source="/ModernSudoku;component/Images/sudoku.png"
+                           Height="60"/>
+
+                        <TextBlock TextWrapping="Wrap" Text="Sudoku" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="10,0" FontSize="39"
+                               FontFamily="Script MT Bold" Foreground="Orange"/>
+                    </StackPanel>
+
+
+                    <TextBlock TextWrapping="Wrap">
+                    <Run Text="A"/>
+                    <Run Foreground="Red" Text="Winter Yang"/>
+                    <Run Text="Application. All Rights Reserved."/>
+                    </TextBlock>
+
+                    <TextBlock TextWrapping="Wrap">
+                    <Run Text="Version: "/>
+                    <Run Text="1.0"/>
+                    </TextBlock>
+
+
+                    <TextBlock TextWrapping="Wrap">
+                    <Run Text="Email: "/>
+                    <Run Text="1161226280@qq.com"/>
+                    </TextBlock>
+                </StackPanel>
+            </panels:BoxPanel.Child>
+        </panels:BoxPanel>
+    </Grid>
+</common:LayoutControl>
+ 

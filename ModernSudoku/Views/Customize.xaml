@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="ModernSudoku.Views.Customize"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             xmlns:appbar="clr-namespace:CommonControls.Windows.ToolBars;assembly=CommonControls"
+             xmlns:ctrls="clr-namespace:ModernSudoku.Controls"
+             xmlns:converters="clr-namespace:ModernSudoku.Converters"
+             xmlns:models="clr-namespace:ModernSudoku.Model"
+             xmlns:timer="clr-namespace:CommonControls.Windows.Timers;assembly=CommonControls"
+             xmlns:cbs="clr-namespace:CommonControls.Windows.CheckBoxes;assembly=CommonControls">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Ebrima"/>
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="259*"/>
+                </Grid.RowDefinitions>
+
+                <ctrls:InfoPanel Grid.Row="0" Margin="3,3,3,0" />
+
+                <ctrls:GamePanel ItemSource="{Binding Riddle, Mode=TwoWay}" Grid.Row="1"
+                                 BrickSource="{Binding BrickSource, Mode=TwoWay}"
+                                 EventCommand="{Binding NumChangeCommand}"
+                                 IsHitTestVisible="{Binding LoadFinished}"
+                                 Margin="10"/>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+    <!--Application bar-->
+    <appbar:AppBarSupporter.Supporter>
+        <appbar:ApplicationBar PinNeeded="True" Background="{StaticResource ThemeBrush}">
+            <appbar:ApplicationBar.IconButtons>
+                <appbar:AppBarItems>
+                    <Button Content="❖" Background="Transparent" Foreground="{StaticResource FontBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        AutomationProperties.Name ="New" Command="{Binding NewGameCommand}"/>
+
+                    <Button Content="✔" Background="Transparent" Foreground="{StaticResource FontBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        AutomationProperties.Name ="OK" Margin="10,0" Command="{Binding OKCommand}" IsEnabled="{Binding IsOKEnable}"/>
+
+                    <Button Content="⚿" Background="Transparent" Foreground="{StaticResource FontBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        AutomationProperties.Name ="Answer" Command="{Binding AnswerCommand}" IsEnabled="{Binding IsAnswerEnable}"/>
+
+                    <Button Content="❮" Background="Transparent" Foreground="{StaticResource FontBrush}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Margin="30,0,0,0"
+                        AutomationProperties.Name ="Back" Command="{Binding BackCommand}"/>
+                </appbar:AppBarItems>
+            </appbar:ApplicationBar.IconButtons>
+        </appbar:ApplicationBar>
+    </appbar:AppBarSupporter.Supporter>
+</UserControl>

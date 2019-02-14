@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernSudoku", "ModernSudoku\ModernSudoku.csproj", "{D18D7570-D779-4B41-B3BF-7FD770F09EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FashionSudoku", "FashionSudoku\FashionSudoku.csproj", "{72785758-E479-4CAD-934D-3B282334CB25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonControls", "..\CommonControls\CommonControls.csproj", "{111A55D2-DD9F-4795-9C96-078579EEE87A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlOperation.LiDongYang", "..\XmlOperation.LiDongYang\XmlOperation.LiDongYang.csproj", "{5B5BF070-E09B-4A85-A17B-7A817D174D3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YldExtensions", "..\YldExtensions\YldExtensions.csproj", "{6AE03775-45EA-41CF-A6FB-5C195CF0B94E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "..\DataModel\DataModel.csproj", "{5F1E1AF4-0849-4CF1-9BC1-36509FFD70CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "..\Contracts\Contracts.csproj", "{019EF3EA-D355-459B-8744-BE2342575247}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://winteryld.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FashionSudoku\\FashionSudoku.csproj
+		SccProjectName1 = FashionSudoku
+		SccLocalPath1 = FashionSudoku
+		SccProjectUniqueName2 = ModernSudoku\\ModernSudoku.csproj
+		SccProjectName2 = ModernSudoku
+		SccLocalPath2 = ModernSudoku
+		SccProjectUniqueName3 = ..\\CommonControls\\CommonControls.csproj
+		SccProjectName3 = ../CommonControls
+		SccLocalPath3 = ..\\CommonControls
+		SccProjectUniqueName4 = ..\\XmlOperation.LiDongYang\\XmlOperation.LiDongYang.csproj
+		SccProjectName4 = ../XmlOperation.LiDongYang
+		SccLocalPath4 = ..\\XmlOperation.LiDongYang
+		SccProjectUniqueName5 = ..\\YldExtensions\\YldExtensions.csproj
+		SccProjectName5 = ../YldExtensions
+		SccLocalPath5 = ..\\YldExtensions
+		SccProjectUniqueName6 = ..\\DataModel\\DataModel.csproj
+		SccProjectName6 = ../DataModel
+		SccLocalPath6 = ..\\DataModel
+		SccProjectUniqueName7 = ..\\Contracts\\Contracts.csproj
+		SccProjectName7 = ../Contracts
+		SccLocalPath7 = ..\\Contracts
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D18D7570-D779-4B41-B3BF-7FD770F09EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18D7570-D779-4B41-B3BF-7FD770F09EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18D7570-D779-4B41-B3BF-7FD770F09EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18D7570-D779-4B41-B3BF-7FD770F09EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72785758-E479-4CAD-934D-3B282334CB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72785758-E479-4CAD-934D-3B282334CB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72785758-E479-4CAD-934D-3B282334CB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72785758-E479-4CAD-934D-3B282334CB25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111A55D2-DD9F-4795-9C96-078579EEE87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111A55D2-DD9F-4795-9C96-078579EEE87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111A55D2-DD9F-4795-9C96-078579EEE87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111A55D2-DD9F-4795-9C96-078579EEE87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5BF070-E09B-4A85-A17B-7A817D174D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5BF070-E09B-4A85-A17B-7A817D174D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5BF070-E09B-4A85-A17B-7A817D174D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5BF070-E09B-4A85-A17B-7A817D174D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE03775-45EA-41CF-A6FB-5C195CF0B94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE03775-45EA-41CF-A6FB-5C195CF0B94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE03775-45EA-41CF-A6FB-5C195CF0B94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE03775-45EA-41CF-A6FB-5C195CF0B94E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1E1AF4-0849-4CF1-9BC1-36509FFD70CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1E1AF4-0849-4CF1-9BC1-36509FFD70CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1E1AF4-0849-4CF1-9BC1-36509FFD70CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1E1AF4-0849-4CF1-9BC1-36509FFD70CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{019EF3EA-D355-459B-8744-BE2342575247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019EF3EA-D355-459B-8744-BE2342575247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019EF3EA-D355-459B-8744-BE2342575247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019EF3EA-D355-459B-8744-BE2342575247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

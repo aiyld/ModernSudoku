@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="ModernSudoku.Controls.Brick"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30">
+    <UserControl.Resources>
+        <Style TargetType="ListBox" x:Key="NumbersListBoxStyle">
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                            <Ellipse Fill="Red"/>
+                            <TextBlock Text="{Binding}" Foreground="White" Width="16" FontSize="16" TextAlignment="Center"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border x:Name="border" Background="PaleGreen" >
+            <Grid>
+                <Button Name="sNumber" Content=""
+                        BorderThickness="0" Margin="1" Background="Transparent">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF954621" Offset="0.082"/>
+                            <GradientStop Color="#FF489C18" Offset="0.831"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+
+                <Popup x:Name="popup" PopupAnimation="Slide" Width="80" Height="80" PlacementTarget="{Binding ElementName=btnNumber}"
+                       Placement="MousePoint" AllowsTransparency="True" StaysOpen="False">
+                    <Border CornerRadius="6" BorderThickness="1" BorderBrush="RosyBrown">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="#FFAAAAAA" Offset="0.25"/>
+                                <GradientStop Color="#FFAAAAAA" Offset="0.75"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ListBox x:Name="listViewNumbers" Style="{StaticResource NumbersListBoxStyle}" Background="Transparent"
+                             VerticalAlignment="Center" BorderThickness="0" Width="80" Height="80" >
+
+                        </ListBox>
+                    </Border>
+                </Popup>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

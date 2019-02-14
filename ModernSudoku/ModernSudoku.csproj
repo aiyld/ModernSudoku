@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D18D7570-D779-4B41-B3BF-7FD770F09EDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModernSudoku</RootNamespace>
+    <AssemblyName>ModernSudoku</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonControls">
+      <HintPath>..\..\..\CommonControls\bin\$(Configuration)\CommonControls.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonUtilities">
+      <HintPath>..\..\..\CommonUtilities\bin\$(Configuration)\CommonUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Contracts">
+      <HintPath>..\..\..\Contracts\bin\$(Configuration)\Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XmlOperation.LiDongYang">
+      <HintPath>..\..\..\XmlOperation.LiDongYang\bin\$(Configuration)\XmlOperation.LiDongYang.dll</HintPath>
+    </Reference>
+    <Reference Include="YldExtensions">
+      <HintPath>..\..\..\YldExtensions\bin\$(Configuration)\YldExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Brick.xaml.cs">
+      <DependentUpon>Brick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GamePanel.xaml.cs">
+      <DependentUpon>GamePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InfoPanel.xaml.cs">
+      <DependentUpon>InfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReferenceTip.xaml.cs">
+      <DependentUpon>ReferenceTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\DoubleToSpecificValueConverter.cs" />
+    <Compile Include="Converters\ListToStringConverter.cs" />
+    <Compile Include="Converters\StringToListConverter.cs" />
+    <Compile Include="Datas\GameMode.cs" />
+    <Compile Include="Model\AppSetting.cs" />
+    <Compile Include="Model\PerformanceOperation.cs" />
+    <Compile Include="Model\SudokuUser.cs" />
+    <Compile Include="Model\XmlUtils.cs" />
+    <Compile Include="ModernSudoku.cs" />
+    <Compile Include="Datas\BrickKind.cs" />
+    <Compile Include="Datas\BrickNode.cs" />
+    <Compile Include="Datas\Constants.cs" />
+    <Compile Include="Datas\MessageKind.cs" />
+    <Compile Include="Datas\MsPoint.cs" />
+    <Compile Include="Datas\MsStep.cs" />
+    <Compile Include="Model\NotificationObject.cs" />
+    <Compile Include="Model\Sudoku.cs" />
+    <Compile Include="Model\Utility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\CenterViewModel.cs" />
+    <Compile Include="ViewModels\CustomizeViewModel.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MBaseViewModel.cs" />
+    <Compile Include="ViewModels\PerformanceViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CenterWindow.xaml.cs">
+      <DependentUpon>CenterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customize.xaml.cs">
+      <DependentUpon>Customize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameWindow.xaml.cs">
+      <DependentUpon>GameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Performance.xaml.cs">
+      <DependentUpon>Performance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Brick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GamePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReferenceTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CenterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Customize.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Performance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainViewPic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sudoku.ico" />
+    <Resource Include="Images\sudoku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainViewPic2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\American Sycamore.png" />
+    <Resource Include="Images\Red Maple.png" />
+    <Resource Include="Images\Sugar Maple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainViewPic3.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="..\..\CommonControls\bin\$(Configuration)\CommonControls.dll">
+      <Link>Dlls\CommonControls.dll</Link>
+    </Content>
+    <Content Include="..\..\CommonControls\bin\$(Configuration)\CommonControls.pdb">
+      <Link>Dlls\CommonControls.pdb</Link>
+    </Content>
+    <Content Include="..\..\CommonUtilities\bin\$(Configuration)\CommonUtilities.dll">
+      <Link>Dlls\CommonUtilities.dll</Link>
+    </Content>
+    <Content Include="..\..\CommonUtilities\bin\$(Configuration)\CommonUtilities.pdb">
+      <Link>Dlls\CommonUtilities.pdb</Link>
+    </Content>
+    <Content Include="..\..\Contracts\bin\$(Configuration)\Contracts.dll">
+      <Link>Dlls\Contracts.dll</Link>
+    </Content>
+    <Content Include="..\..\Contracts\bin\$(Configuration)\Contracts.pdb">
+      <Link>Dlls\Contracts.pdb</Link>
+    </Content>
+    <Content Include="..\..\XmlOperation.LiDongYang\bin\$(Configuration)\XmlOperation.LiDongYang.dll">
+      <Link>Dlls\XmlOperation.LiDongYang.dll</Link>
+    </Content>
+    <Content Include="..\..\XmlOperation.LiDongYang\bin\$(Configuration)\XmlOperation.LiDongYang.pdb">
+      <Link>Dlls\XmlOperation.LiDongYang.pdb</Link>
+    </Content>
+    <Content Include="..\..\YldExtensions\bin\$(Configuration)\YldExtensions.dll">
+      <Link>Dlls\YldExtensions.dll</Link>
+    </Content>
+    <Content Include="..\..\YldExtensions\bin\$(Configuration)\YldExtensions.pdb">
+      <Link>Dlls\YldExtensions.pdb</Link>
+    </Content>
+    <Resource Include="Images\Star.png" />
+    <Resource Include="Images\cu.png" />
+    <Resource Include="Images\gold.png" />
+    <Resource Include="Images\silver.png" />
+    <Resource Include="Images\thinking.jpg" />
+    <Resource Include="Images\Settings.png" />
+    <Resource Include="Images\leaffall.gif" />
+    <Resource Include="Images\bietianshen.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,190 @@
+﻿<common:LayoutControl x:Class="ModernSudoku.Views.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:common="clr-namespace:CommonControls.Common;assembly=CommonControls"
+             Title="Settings" d:DesignHeight="380" d:DesignWidth="280"
+             mc:Ignorable="d"
+             xmlns:ctrls="clr-namespace:CommonControls.Windows.CheckBoxes;assembly=CommonControls"
+             xmlns:panels="clr-namespace:CommonControls.Windows.Panels;assembly=CommonControls">
+    <common:LayoutControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="6,3"/>
+        </Style>
+        <Style TargetType="{x:Type ctrls:ToggleBox}">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="SeperateStyle" TargetType="Rectangle">
+            <Setter Property="Fill" Value="Silver"/>
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="RadiusX" Value="1"/>
+            <Setter Property="RadiusY" Value="1"/>
+        </Style>
+
+        <Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Rectangle Fill="Transparent"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HorizontalSliderThumbStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Height" Value="12"/>
+            <Setter Property="Width" Value="12"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Ellipse Stroke="#FF5E5D5D" StrokeThickness="0.8" >
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="#FFCFCFCF" Offset="0.25"/>
+                                    <GradientStop Color="#FFCFCFCF" Offset="0.75"/>
+                                    <GradientStop Color="White" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Slider}">
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFC4C4C4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Slider}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TickBar x:Name="TopTick" Fill="{TemplateBinding Foreground}" Height="4" Placement="Top" Grid.Row="0" Visibility="Collapsed"/>
+                                <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" Height="4" Placement="Bottom" Grid.Row="2" Visibility="Collapsed"/>
+                                <Border x:Name="TrackBackground"  CornerRadius="1" Height="5.0" Margin="5,0" Grid.Row="1" VerticalAlignment="center">
+                                    <Grid>
+                                        <Border Background="#FFF7F4F4" CornerRadius="0.5" Opacity="0.215"/>
+                                        <Border CornerRadius="3" Margin="0,0,0.3,0.3" Opacity="0.715">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFEEEEEE" Offset="0"/>
+                                                    <GradientStop Color="#FFAAAAAA" Offset="0.5"/>
+                                                    <GradientStop Color="#FFEEEEEE" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                                <Track x:Name="PART_Track" Grid.Row="1">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}"/>
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource SliderRepeatButtonStyle}"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Style="{StaticResource HorizontalSliderThumbStyle}"/>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </common:LayoutControl.Resources>
+
+    <Grid>
+        <panels:BoxPanel ButtonCommand="{Binding BackCommand}" FrameBorderBrush="Silver">
+            <panels:BoxPanel.Child>
+                <StackPanel>
+                    <TextBlock Text="USER" FontSize="13" Foreground="Gray" Margin="6,22,6,8"/>
+                    <StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                        <StackPanel Margin="6,3">
+                            <Grid>
+                                <Grid.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputNameCommand}"/>
+                                </Grid.InputBindings>
+                                <TextBlock Text="Name" />
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding AppSetting.SudokuUser.Name}" Foreground="Black"/>
+                                    <TextBlock Text="⟩" Margin="0,3" Foreground="Gray"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                    </StackPanel>
+
+
+                    <TextBlock Margin="6,12,6,8" FontSize="11" Foreground="Gray" TextWrapping="Wrap"
+                           Text="Suggest original count not bigger than 26, or it will take long time to initialize new game."/>
+                    <StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                        <StackPanel Margin="6,3">
+                            <TextBlock Grid.ColumnSpan="2" FontSize="16">
+                                <Run Text="Original Count "/>
+                                <Run Text="{Binding AppSetting.OriginalCount, Mode=TwoWay}"/>
+                            </TextBlock>
+                            <Slider Minimum="0" Maximum="81" Value="{Binding AppSetting.OriginalCount, Mode=TwoWay}" Margin="6,3,6,6"/>
+                        </StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock Text="TIPS" FontSize="13" Foreground="Gray" Margin="6,12,6,3"/>
+                    <StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                        <StackPanel Margin="6,3">
+                            <Grid>
+                                <TextBlock Text="Reference Tips" />
+                                <ctrls:ToggleBox IsCheck="{Binding AppSetting.ReferenceTips, Mode=TwoWay}"/>
+                            </Grid>
+                            <StackPanel Visibility="{Binding AppSetting.ReferenceTips, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Rectangle Margin="6,3,-6,3" Style="{StaticResource SeperateStyle}"/>
+                                <Grid>
+                                    <TextBlock Text="All Number"/>
+                                    <ctrls:ToggleBox IsCheck="{Binding AppSetting.ReferenceAlwaysOneNine, Mode=TwoWay}"/>
+                                </Grid>
+                            </StackPanel>
+                            <Rectangle Margin="6,3,-6,3" Style="{StaticResource SeperateStyle}"/>
+                            <Grid>
+                                <TextBlock Text="Popup Tips" />
+                                <!--PopupTips-->
+                                <ctrls:ToggleBox IsCheck="{Binding AppSetting.PopupTips, Mode=TwoWay}"/>
+                            </Grid>
+                        </StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,12,0,3">
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                        <StackPanel Margin="6,3">
+                            <Grid>
+                                <TextBlock Text="Timer" />
+                                <ctrls:ToggleBox IsCheck="{Binding AppSetting.TimerOn, Mode=TwoWay}"/>
+                            </Grid>
+                        </StackPanel>
+                        <Rectangle Style="{StaticResource SeperateStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+            </panels:BoxPanel.Child>
+        </panels:BoxPanel>
+    </Grid>
+
+</common:LayoutControl>
