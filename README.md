@@ -1,5 +1,6 @@
 # ModernSudoku
 A WPF game for sudoku lovers.
+一个为数独爱好者打造的数独游戏，适用于Windows系统
 
 ### Reward
 If you find it comfortable or helpful, you can buy me a cup of coffee~
