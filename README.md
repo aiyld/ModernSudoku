@@ -7,8 +7,7 @@ If you find it comfortable or helpful, you can buy me a cup of coffee~
 
 Way     | Address
 --- | -----
-CoinEx Inner transfer | admin@samyoc.com
-BTC    | 1GzmpmiTwLiiMS7rMR1koP91q7Q9KaQCi1
+BTC    | 1Q6ZDFC3FueXY3JocmeMqgiSsGGtppbvz2
 
 ### More info
 - Author's design idea: [https://www.samyoc.com/single/15](https://www.samyoc.com/single/15)
